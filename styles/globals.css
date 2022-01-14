@@ -18,3 +18,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.green {
+  color: greenyellow;
+}
+
+.red {
+  color: red;
+}
