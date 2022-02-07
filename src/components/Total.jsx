@@ -1,6 +1,5 @@
 import { useContext } from "react"
-import { AppContext } from "../context/State"
-
+import AppContext from "./AppContext"
 export const Total = () => {
   const { deals } = useContext(AppContext)
   const amounts = deals.map((deal) => deal.amount)

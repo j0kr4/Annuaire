@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import AppContext from "../context/State"
+import AppContext from "./AppContext"
 
 const InOut = () => {
   const { deals } = useContext(AppContext)

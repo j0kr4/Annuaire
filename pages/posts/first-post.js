@@ -4,7 +4,7 @@ import FormField from "../../src/components/FormField"
 import Button from "../../src/components/Button"
 import { Formik } from "formik"
 import { useState } from "react"
-import { AppContextProvider } from "../../src/context/State"
+import { AppContextProvider } from "../../src/components/AppContext"
 
 export default function FirstPost() {
   const [description, setDescription] = useState("")

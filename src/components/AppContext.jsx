@@ -1,5 +1,5 @@
-import { createContext, useCallback, useState } from "react"
 import { deepmerge } from "deepmerge"
+import { createContext, useCallback, useState } from "react"
 
 const defaultState = {
   deals: [
@@ -12,18 +12,20 @@ const defaultState = {
 
 const AppContext = createContext(defaultState)
 
-export const AppContextProvider = (children) => {
+export const AppContextProvider = ( children ) => {
   const [state, setState] = useState(defaultState)
 
   const addDeal = useCallback(() => {
     setState((currentState) =>
       deepmerge(currentState, {
-        deals: currentState.deals.amount + state.deals.amount,
+        deals: currentState.deals.amount + state.amount,
       })
     )
-  }, [state.deals.amount])
+  })
 
-  return <AppContext.Provider {...children} value={{ state, addDeal }} />
+  return (
+    <AppContext.Provider {...children} value={{ deals: state.deals, addDeal }}/>
+  )
 }
 
 export default AppContext
