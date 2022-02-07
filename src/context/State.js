@@ -12,22 +12,18 @@ const defaultState = {
 
 const AppContext = createContext(defaultState)
 
-export const AppContextProvider = ({ children }) => {
+export const AppContextProvider = (children) => {
   const [state, setState] = useState(defaultState)
 
   const addDeal = useCallback(() => {
     setState((currentState) =>
       deepmerge(currentState, {
-        deals: currentState.deals.amount + state.amount,
+        deals: currentState.deals.amount + state.deals.amount,
       })
     )
-  })
+  }, [state.deals.amount])
 
-  return (
-    <AppContext.Provider value={{ deals: state.deals, addDeal }}>
-      {children}
-    </AppContext.Provider>
-  )
+  return <AppContext.Provider {...children} value={{ state, addDeal }} />
 }
 
 export default AppContext

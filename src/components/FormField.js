@@ -1,12 +1,12 @@
 import { Field } from "formik"
-import Input from "./Input"
+import Button from "./Button"
 
 const FormField = (props) => {
   const {
     children,
     className,
     helper: Helper,
-    as: Component = Input,
+    as: Component = Button,
     ...otherProps
   } = props
 

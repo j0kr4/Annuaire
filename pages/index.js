@@ -7,26 +7,24 @@ import { AppContextProvider } from "../src/context/State"
 
 export default function Home() {
   return (
-    <AppContextProvider>
-      <div>
-        <Head>
-          <title>Dashboard</title>
-          <meta name="description" content="" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <div className="float-root">
-          <p className="text-3xl font-bold float-left">Dashboard</p>
-          <Link href="/posts/first-post">
-            <a className="text-2xl font-bold float-right pl-5">Add entry</a>
-          </Link>
-          <Link href="/">
-            <a className="text-2xl font-bold float-right">Dashboard</a>
-          </Link>
-        </div>
-        <InOut />
-        <EntriesList />
-        <Total />
+    <div>
+      <Head>
+        <title>Dashboard</title>
+        <meta name="description" content="" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="float-root">
+        <p className="text-3xl font-bold float-left">Dashboard</p>
+        <Link href="/posts/first-post">
+          <a className="text-2xl font-bold float-right pl-5">Add entry</a>
+        </Link>
+        <Link href="/">
+          <a className="text-2xl font-bold float-right">Dashboard</a>
+        </Link>
       </div>
-    </AppContextProvider>
+      <InOut />
+      <EntriesList />
+      <Total />
+    </div>
   )
 }
