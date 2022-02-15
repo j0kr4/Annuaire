@@ -1,11 +1,16 @@
 import { AppContextProvider } from "../src/components/AppContext"
 import "../styles/globals.css"
 
-function MyApp({ Component, pageProps, ...otherProps }) {
-  return (
-  <AppContextProvider>
-    <Component {...pageProps} {...otherProps} />
-  </AppContextProvider>)
+const id = (x) => x
+
+const App = ({ Component, pageProps }) => {
+  const getLayout = Component.getLayout || id
+
+  return getLayout(
+    <AppContextProvider>
+      <Component {...pageProps} />
+    </AppContextProvider>
+  )
 }
 
-export default MyApp
+export default App

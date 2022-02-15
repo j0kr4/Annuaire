@@ -1,31 +1,34 @@
-import AppContext from "@/components/AppContext"
-import Button from "@/components/Button"
-import FormField from "@/components/FormField"
-import Textarea from "@/components/Textarea"
-import { amountValidator, descriptionValidator } from "@/validators/validators"
+import AppContext from "../../src/components/AppContext"
+import Button from "../../src/components/Button"
+import FormField from "../../src/components/FormField"
+import Textarea from "../../src/components/Textarea"
+import {
+  nameValidator,
+  firstNameValidator,
+} from "../../src/validators/validators"
 import { Formik } from "formik"
 import { useCallback, useContext } from "react"
 import * as yup from "yup"
 
-const { default: Page } = require("@/components/Page")
+const { default: Page } = require("../../src/components/Page")
 
 const initialValues = {
-  amount: 0,
-  description: "",
+  name: 0,
+  firstName: "",
 }
 const validationSchema = yup
   .object()
   .shape({
-    amount: amountValidator.required(),
-    description: descriptionValidator.required(),
+    name: nameValidator.required(),
+    firstName: firstNameValidator.required(),
   })
   .required()
 
 const AddEntryPage = () => {
   const { addEntry } = useContext(AppContext)
   const handleFormSubmit = useCallback(
-    ({ amount, description }, { resetForm }) => {
-      addEntry({ amount, description })
+    ({ name, firstName }, { resetForm }) => {
+      addEntry({ name, firstName })
       resetForm()
     },
     [addEntry]

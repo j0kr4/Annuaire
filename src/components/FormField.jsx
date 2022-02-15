@@ -1,4 +1,4 @@
-import Input from "@/components/Input"
+import Input from "../../src/components/Input"
 import classNames from "classnames"
 import { Field } from "formik"
 const FormField = (props) => {

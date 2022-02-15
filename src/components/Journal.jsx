@@ -10,10 +10,18 @@ const Journal = (props) => {
     >
       <thead>
         <tr className="border-b-2 font-bold">
-          <th className="p-2 border-r">Name</th>
+          <th className="p-2 border-r">Name</th>   
+        </tr>
+        <tr>
           <th className="p-2">First Name</th>
+        </tr>
+        <tr>
           <th className="p-2">Adress</th>
+        </tr>
+        <tr>
           <th className="p-2">Email Adress</th>
+        </tr>
+        <tr>
           <th className="p-2">Phone Number</th>
         </tr>
       </thead>
