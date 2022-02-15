@@ -1,27 +1,19 @@
+import Input from "@/components/Input"
+import classNames from "classnames"
 import { Field } from "formik"
-import Input from "./Button"
-
 const FormField = (props) => {
-  const {
-    children,
-    className,
-    helper: Helper,
-    as: Component = Input,
-    ...otherProps
-  } = props
+  const { name, as: Component = Input, className, ...otherProps } = props
 
   return (
-    <Field {...otherProps}>
-      {({ field, meta, meta: { touched, error } }) => (
-        <div className={className}>
-          <label className="block">
-            {children}
-            <Component className="w-full" {...field} {...otherProps} />
+    <Field name={name}>
+      {({ field, meta: { error, touched } }) => (
+        <div className={classNames(className)}>
+          <label className="block w-full">
+            <Component {...field} className="w-full block" {...otherProps} />
           </label>
           {touched && error ? (
-            <p className="text-red-500 p-2 text-sm">{error}</p>
+            <p className="text-red-500 text-sm p-2">{error}</p>
           ) : null}
-          {Helper ? <Helper field={field} meta={meta} /> : null}
         </div>
       )}
     </Field>

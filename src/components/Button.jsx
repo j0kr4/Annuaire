@@ -1,20 +1,15 @@
 import classNames from "classnames"
 
-const className = "font-bold"
-const color = {
-  primary: "bg-blue-600 dark:bg-pink-600 text-white disabled:bg-blue-300",
-}
-const sizes = {
-  md: "py-1.5 px-3 text-md",
-}
-
 const Button = (props) => {
-  const { colors = "primary", size = "md", ...otherProps } = props
+  const { as: Component = "button", className, ...otherProps } = props
 
   return (
-    <button
+    <Component
       {...otherProps}
-      className={classNames(className, colors[color], sizes[size])}
+      className={classNames(
+        "py-1.5 px-3 font-bold text-lg bg-slate-500 text-white",
+        className
+      )}
     />
   )
 }
