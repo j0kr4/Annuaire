@@ -7,7 +7,7 @@ const Button = (props) => {
     <Component
       {...otherProps}
       className={classNames(
-        "py-1.5 px-3 font-bold text-lg bg-slate-500 text-white",
+        "py-1.5 px-3 font-bold text-lg bg-slate-600 text-white",
         className
       )}
     />
