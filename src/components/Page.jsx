@@ -20,7 +20,7 @@ const Page = (props) => {
             </li>
             <li>
               <Link href="posts/first-post">
-                <a>Add entry</a>
+                <a>Add contact</a>
               </Link>
             </li>
           </ul>

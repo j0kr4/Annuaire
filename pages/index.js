@@ -9,6 +9,6 @@ const IndexPage = () => {
   return <Journal entries={entries} />
 }
 
-IndexPage.getLayout = (page) => <Page title="Dashboard">{page}</Page>
+IndexPage.getLayout = (page) => <Page title="Annuaire">{page}</Page>
 
 export default IndexPage
