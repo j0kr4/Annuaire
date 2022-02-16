@@ -7,7 +7,7 @@ import {
   firstNameValidator,
   adressValidator,
   emailValidator,
-  numberValidator,
+  ageValidator,
 } from "../../src/validators/validators"
 import { Formik } from "formik"
 import { useCallback, useContext } from "react"
@@ -20,7 +20,7 @@ const initialValues = {
   firstName: "",
   adress: "",
   email: "",
-  number: 0,
+  age: 0,
 }
 const validationSchema = yup
   .object()
@@ -29,15 +29,15 @@ const validationSchema = yup
     firstName: firstNameValidator.required(),
     adress: adressValidator.required(),
     email: emailValidator.required(),
-    number: numberValidator.required(),
+    age: ageValidator.required(),
   })
   .required()
 
 const AddEntryPage = () => {
   const { addEntry } = useContext(AppContext)
   const handleFormSubmit = useCallback(
-    ({ name, firstName, adress, email, number }, { resetForm }) => {
-      addEntry({ name, firstName, adress, email, number })
+    ({ name, firstName, adress, email, age }, { resetForm }) => {
+      addEntry({ name, firstName, adress, email, age })
       resetForm()
     },
     [addEntry]
@@ -53,13 +53,21 @@ const AddEntryPage = () => {
         <form
           noValidate
           onSubmit={handleSubmit}
-          className="flex flex-col gap-4 p-4"
+          className="flex flex-col gap-3 p-3"
         >
-          <FormField name="name" type="string" />
-          <FormField name="firstName" type="string" />
-          <FormField name="adress" as={Textarea} />
-          <FormField name="email" type="string" />
-          <FormField name="number" type="number" />
+          <FormField name="name" type="string" placeholder="Enter a name" />
+          <FormField
+            name="firstName"
+            type="string"
+            placeholder="Enter a first name"
+          />
+          <FormField
+            name="adress"
+            as={Textarea}
+            placeholder="Enter an adress"
+          />
+          <FormField name="email" type="string" placeholder="Enter an email" />
+          <FormField name="age" type="number" placeholder="Enter a age" />
           <Button type="submit" disabled={isSubmitting || !isValid}>
             ADD
           </Button>

@@ -12,17 +12,17 @@ const Journal = (props) => {
         <tr className="font-bold">
           <th className="p-2 border-r">Name</th>
           <th />   
-          <th className="p-2">First Name</th>
+          <th className="p-2 border-r">First Name</th>
           <th /> 
-          <th className="p-2">Adress</th>
+          <th className="p-2 border-r">Adress</th>
           <th /> 
-          <th className="p-2">Email Adress</th>
+          <th className="p-2 border-r">Email Adress</th>
           <th /> 
-          <th className="p-2">Phone Number</th>
+          <th className="p-2 border-r">Age</th>
         </tr>
       </thead>
       <tbody>
-        {entries.map(({ name, firstName, adress, email, number }, index) => (
+        {entries.map(({ name, firstName, adress, email, age }, index) => (
           <tr key={index} className={classNames({ "bg-slate-100": index % 2 })}>
             <>
               <td className="text-left p-2">
@@ -60,7 +60,7 @@ const Journal = (props) => {
               <td />
               <td className="text-left p-2">
                 <span className="font-bold">
-                  {number}
+                  {age}
                 </span>
               </td>
             </>
