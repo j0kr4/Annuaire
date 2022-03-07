@@ -67,7 +67,7 @@ const AddEntryPage = () => {
             placeholder="Enter an adress"
           />
           <FormField name="email" type="string" placeholder="Enter an email" />
-          <FormField name="age" type="number" placeholder="Enter a age" />
+          <FormField name="age" Ctype="number" placeholder="Enter a age" />
           <Button type="submit" disabled={isSubmitting || !isValid}>
             ADD
           </Button>

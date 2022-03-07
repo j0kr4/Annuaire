@@ -6,18 +6,14 @@ const Journal = (props) => {
   return (
     <table
       {...otherProps}
-      className={classNames(className, "table-fixed w-full")}
+      className={classNames(className, "table-fixed w-full border-separate border border-gray-400")}
     >
       <thead>
         <tr className="font-bold">
-          <th className="p-2 border-r">Name</th>
-          <th />   
+          <th className="p-2 border-r">Name</th> 
           <th className="p-2 border-r">First Name</th>
-          <th /> 
           <th className="p-2 border-r">Adress</th>
-          <th /> 
           <th className="p-2 border-r">Email Adress</th>
-          <th /> 
           <th className="p-2 border-r">Age</th>
         </tr>
       </thead>
@@ -30,10 +26,8 @@ const Journal = (props) => {
                   {name}
                 </span>
               </td>
-              <td />
             </>
             <>
-              <td />
               <td className="text-left p-2">
                 <span className="font-bold">
                   {firstName}
@@ -41,7 +35,6 @@ const Journal = (props) => {
               </td>
             </>
             <>
-              <td />
               <td className="text-left p-2">
                 <span className="font-bold">
                   {adress}
@@ -49,7 +42,6 @@ const Journal = (props) => {
               </td>
             </>
             <>
-              <td />
               <td className="text-left p-2">
                 <span className="font-bold">
                   {email}
@@ -57,7 +49,6 @@ const Journal = (props) => {
               </td>
             </>
             <>
-              <td />
               <td className="text-left p-2">
                 <span className="font-bold">
                   {age}
