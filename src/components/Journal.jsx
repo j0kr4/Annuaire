@@ -9,12 +9,12 @@ const Journal = (props) => {
       className={classNames(className, "table-fixed w-full border-separate border border-gray-400")}
     >
       <thead>
-        <tr className="font-bold">
-          <th className="p-2 border-r">Name</th> 
-          <th className="p-2 border-r">First Name</th>
-          <th className="p-2 border-r">Adress</th>
-          <th className="p-2 border-r">Email Adress</th>
-          <th className="p-2 border-r">Age</th>
+        <tr className="font-bold border">
+          <th className="p-2 border-r border-b">Name</th> 
+          <th className="p-2 border-r border-b">First Name</th>
+          <th className="p-2 border-r border-b">Adress</th>
+          <th className="p-2 border-r border-b">Email Adress</th>
+          <th className="p-2 border-r border-b">Age</th>
         </tr>
       </thead>
       <tbody>
